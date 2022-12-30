@@ -2,13 +2,14 @@
 
 const url = "https://unstats.un.org/unsd/methodology/m49/overview/";
 const languages = ["EN", "FR", "ES", "RU", "ZH", "AR"]; // the first one will be the default "name"
+const corsProxy = "https://cors-anywhere.herokuapp.com/";
 
 const countries = [];
 const regions = [];
 const columns = [];
 const parser = new DOMParser();
 
-fetch(url)
+fetch(corsProxy + url)
   .then(response => response.text())
   .then(html => {
 
